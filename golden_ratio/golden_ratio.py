@@ -1,12 +1,14 @@
 import turtle
 
-def draw_golden_ratio(iterations=10, initial_length=200):
+def draw_golden_ratio(iterations=50, initial_length=200):
     # Создаем экран и черепаху
     screen = turtle.Screen()
     screen.setup(width=800, height=600)
-    screen.bgcolor("white")
+    screen.bgcolor("black")
     t = turtle.Turtle()
-    t.speed(0)  # Устанавливаем максимальную скорость для черепахи
+    t.speed(1)  # Устанавливаем медленную скорость для черепахи
+    t.pensize(3)
+    t.color("yellow")
 
     # Золотое сечение
     phi = (1 + 5 ** 0.5) / 2
@@ -19,7 +21,7 @@ def draw_golden_ratio(iterations=10, initial_length=200):
     for _ in range(iterations):
         t.forward(a)
         t.left(90)
-        t.forward(b)
+        t.circle(b, 180)  # Изогнутая линия вместо прямой
         t.left(90)
 
         # Обновляем значения для следующего отрезка
@@ -28,4 +30,4 @@ def draw_golden_ratio(iterations=10, initial_length=200):
     # Закрываем окно по клику
     screen.exitonclick()
 
-draw_golden_ratio(iterations=15, initial_length=200)
+draw_golden_ratio(iterations=250, initial_length=200)
