@@ -1,7 +1,7 @@
 import turtle
 
 def draw_golden_ratio(iterations=50, initial_length=200):
-    # Создаем экран и черепаху
+ 
     screen = turtle.Screen()
     screen.setup(width=800, height=600)
     screen.bgcolor("black")
